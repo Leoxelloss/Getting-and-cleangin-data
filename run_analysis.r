@@ -52,8 +52,6 @@ run_analysis<- function(){
   Data2<-aggregate(. ~Subject + Activity, Combine_data, mean)
   Data2<-Data2[order(Data2$Subject,Data2$Activity),]
   write.table(Data2, file = "tidydata.txt",row.name=FALSE)
-  #Write the cook book
-  library(knitr)
-  knit2html("codebook.rmd");
+
 
 }
